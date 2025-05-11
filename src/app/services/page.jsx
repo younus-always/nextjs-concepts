@@ -38,15 +38,17 @@ const ServicesPage = () => {
       ]
 
       return (
-            <div>
+            <div className='max-w-6xl mx-auto py-6 grid grid-cols-4 gap-5'>
                   {
-                        services.map(service => <div key={service.id}
-                              onClick={() => router.push(`/services/${service.id}`)}
-                              className='rounded-lg p-5 shadow-md'>
-                              <h3>{service.title}</h3>
-                              <span>{service.icon}</span>
-                              <p>{service.description}</p>
-                        </div>)
+                        services.map(service => {
+                              return (<div key={service.id}
+                                    onClick={() => router.push(`/services/${service.id}`)}
+                                    className='rounded-lg p-5 shadow-md hover:scale-95 hover:shadow-lg duration-300 shadow-slate-400 cursor-pointer'>
+                                    <span>{service.icon}</span>
+                                    <h3>{service.title}</h3>
+                                    <p>{service.description}</p>
+                              </div>)
+                        })
                   }
             </div>
       )
