@@ -2,6 +2,43 @@ import React from 'react'
 
 const ServicesDetailPage = ({ params }) => {
       const id = params?.id
+
+      const services = [
+            {
+                  id: 1,
+                  title: "Web Development",
+                  description: "Building responsive and modern websites using the latest front-end technologies.",
+                  icon: "🌐"
+            },
+            {
+                  id: 2,
+                  title: "UI/UX Design",
+                  description: "Creating user-friendly and attractive designs for web and mobile platforms.",
+                  icon: "🎨"
+            },
+            {
+                  id: 3,
+                  title: "SEO Optimization",
+                  description: "Improving website visibility on search engines to drive more organic traffic.",
+                  icon: "⚙️"
+            },
+            {
+                  id: 4,
+                  title: "E-commerce Solutions",
+                  description: "Developing online stores with smooth checkout, secure payment, and product management.",
+                  icon: "🛒"
+            },
+            {
+                  id: 5,
+                  title: "Website Maintenance",
+                  description: "Keeping your website updated, secure, and performing at its best.",
+                  icon: "🔧"
+            }
+      ]
+      const findService = services.find(services => services.id == id)
+      if (!findService) {
+            return <h2 className='text-3xl font-semibold text-red-600 text-center py-5'> Service item not found </h2>
+      }
       return (
             <div>
                   <p>Service Id: {id}</p>
