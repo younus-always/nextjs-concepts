@@ -29,6 +29,9 @@ const Navber = () => {
             <li>
               <Link href="/meals">Meals</Link>
             </li>
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
           </ul>
         </div>
       </nav>
