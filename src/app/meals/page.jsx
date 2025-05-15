@@ -31,9 +31,12 @@ const MealsPage = async ({ searchParams }) => {
                   {meals?.length < 1 ?
                         <p className="text-3xl text-center font-semibold py-5 text-red-600">No Data Found</p>
                         : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-8">
-                              {meals?.map(m => <div key={m.idMeal} className="rounded-lg p-5 bg-gray-800 shadow-lg shadow-gray-500">
-                                    <h3>Name: {m.strMeal}</h3>
-                                    <p>Category: {m.strCategory}</p>
+                              {meals?.map(m => <div key={m.idMeal} className="rounded-lg bg-gray-800 shadow-lg shadow-gray-500">
+                                    <img src={m.strMealThumb} alt={`Picture of the ${m.strMeal}`} className="rounded-lg" />
+                                    <div className="p-4">
+                                          <h3>Name: {m.strMeal}</h3>
+                                          <p>Category: {m.strCategory}</p>
+                                    </div>
                               </div>)}
                         </div>
                   }

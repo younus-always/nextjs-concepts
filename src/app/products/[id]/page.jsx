@@ -5,7 +5,7 @@ export const getSingleProduct = async (id) => {
       const res = await fetch(`https://dummyjson.com/products/${id}`)
       const data = await res.json()
       return data
-}
+};
 
 // export const metadata = {
 //       title: "Product Details",
@@ -15,8 +15,7 @@ export const getSingleProduct = async (id) => {
 // Generate Metadata function ( dynamically set title )
 export async function generateMetadata({ params }) {
       // read route params
-      const { id } = await params
-
+      const { id } = await params;
       // fetch data
       const singleProduct = await getSingleProduct(id)
 
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }) {
             title: singleProduct.title,
             description: singleProduct.description
       }
-}
+};
 
 // Server Side Component
 const ProductDetails = async ({ params }) => {
