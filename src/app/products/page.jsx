@@ -27,9 +27,7 @@ const Products = async () => {
                               return (
                                     <Link href={`/products/${product.id}`} key={product.id}>
                                           <div className="rounded-2xl p-5 shadow-lg shadow-lime-200 group cursor-pointer hover:shadow-md duration-300">
-                                                <figure className="group-hover:scale-90 duration-200">
-                                                      <Image src={product.thumbnail} width={268} height={268} alt={`Picture of the ${product.title}`} />
-                                                </figure>
+                                                <Image src={product.thumbnail} width={268} height={268} alt={`Picture of the ${product.title}`} className="group-hover:scale-90 duration-200" />
                                                 <h3 className="text-lg font-semibold">Name: {product.title}</h3>
                                                 <p>Category: {product.category}</p>
                                                 <p>Price: ${product.price}</p>

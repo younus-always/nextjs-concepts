@@ -1,6 +1,12 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Roboto } from "next/font/google";
+
+// Customize font 
+const roboto = Roboto({
+  weight: ['400', '500', '600', '700']
+})
 
 const Navber = () => {
   const pathname = usePathname()
@@ -8,9 +14,9 @@ const Navber = () => {
 
   if (!pathname.includes('dashboard')) {
     return (
-      <nav className='bg-gray-900 flex items-center justify-center'>
+      <nav className={`${roboto.className} bg-gray-900 flex items-center justify-center`}>
         <div className='flex items-center justify-between py-5'>
-          <ul className='flex items-center gap-4'>
+          <ul className='flex items-center font-semibold gap-4'>
             <li>
               <Link href="/">Home</Link>
             </li>
