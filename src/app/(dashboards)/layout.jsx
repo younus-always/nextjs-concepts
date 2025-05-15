@@ -4,7 +4,7 @@ const DashboardLayout = ({ children }) => {
                   <div className="col-span-3 bg-gray-800 p-5">
                         <ul>
                               <li>
-                                    list
+                                    Admin Layout Navber
                               </li>
                         </ul>
                   </div>

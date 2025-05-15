@@ -6,12 +6,32 @@ export const getSingleProduct = async (id) => {
       const data = await res.json()
       return data
 }
+
+// export const metadata = {
+//       title: "Product Details",
+//       description: "Trying to learn next.js as well as good",
+// }
+
+// Generate Metadata function ( dynamically set title )
+export async function generateMetadata({ params }) {
+      // read route params
+      const { id } = await params
+
+      // fetch data
+      const singleProduct = await getSingleProduct(id)
+
+      return {
+            title: singleProduct.title,
+            description: singleProduct.description
+      }
+}
+
 // Server Side Component
 const ProductDetails = async ({ params }) => {
       const id = await params.id
       const singleProduct = await getSingleProduct(id)
-      console.log(singleProduct)
       const { title, images, description, price, stock, sku, brand } = singleProduct || {}
+
       if (!singleProduct) {
             return <p className="text-3xl font-semibold text-red-50 py-5 text-center">No Data Found</p>
       }

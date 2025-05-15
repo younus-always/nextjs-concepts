@@ -1,5 +1,10 @@
 import MealSearchInput from "../components/MealSearchInput"
 
+export const metadata = {
+      title: "All Meals",
+      description: "Trying to learn next.js as well as good",
+}
+
 const MealsPage = async ({ searchParams }) => {
       const { search } = await searchParams
 
@@ -8,9 +13,10 @@ const MealsPage = async ({ searchParams }) => {
             try {
                   const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
                   const data = await res.json()
-                  return data.meals
+                  return data?.meals
             } catch (error) {
                   console.log("Fetching Error:", error)
+                  return []
             }
       }
       // function call
@@ -22,7 +28,7 @@ const MealsPage = async ({ searchParams }) => {
                   <div className="flex items-center justify-center">
                         <MealSearchInput />
                   </div>
-                  {!meals ?
+                  {meals?.length < 1 ?
                         <p className="text-3xl text-center font-semibold py-5 text-red-600">No Data Found</p>
                         : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-8">
                               {meals?.map(m => <div key={m.idMeal} className="rounded-lg p-5 bg-gray-800 shadow-lg shadow-gray-500">

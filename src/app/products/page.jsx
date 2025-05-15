@@ -7,6 +7,11 @@ export const getProducts = async () => {
       return data
 }
 
+export const metadata = {
+      title: "All Products",
+      description: "Trying to learn next.js as well as good",
+}
+
 // Server Side Component
 const Products = async () => {
       const { products } = await getProducts()

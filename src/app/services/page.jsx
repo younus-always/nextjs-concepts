@@ -1,6 +1,11 @@
 "use client"
 import { useRouter } from 'next/navigation'
-import React from 'react'
+
+//? You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive.
+// export const metadata = {
+//       title: "Services",
+//       description: "Trying to learn next.js as well as good",
+// }
 
 const ServicesPage = () => {
       const router = useRouter()

@@ -1,4 +1,8 @@
-import React from 'react'
+
+export const metadata = {
+      title: "Service Details",
+      description: "Trying to learn next.js as well as good",
+}
 
 const ServicesDetailPage = ({ params }) => {
       const id = params?.id
@@ -40,8 +44,10 @@ const ServicesDetailPage = ({ params }) => {
             return <h2 className='text-3xl font-semibold text-red-600 text-center py-5'> Service item not found </h2>
       }
       return (
-            <div>
+            <div className="max-w-3xl mx-auto py-8">
                   <p>Service Id: {id}</p>
+                  <h3 className="text-lg font-semibold">Title: {findService.title}</h3>
+                  <p>Description: {findService.description}</p>
             </div>
       )
 }

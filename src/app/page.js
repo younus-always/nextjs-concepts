@@ -1,4 +1,8 @@
-import Image from "next/image";
+
+export const metadata = {
+  title: "Home",
+  description: "Trying to learn next.js as well as good",
+}
 
 export default function Home() {
   return (
