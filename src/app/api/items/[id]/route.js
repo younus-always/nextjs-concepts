@@ -1,5 +1,5 @@
-import dbConnect from "@/lib/dbConnect"
 import { ObjectId } from "mongodb"
+import dbConnect from "../../../../lib/dbConnect"
 
 export async function GET(req, { params }) {
 

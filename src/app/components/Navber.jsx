@@ -38,6 +38,9 @@ const Navber = () => {
             <li>
               <Link href="/products">Products</Link>
             </li>
+            <li>
+              <Link href="/gadget/add">Add Gadget</Link>
+            </li>
           </ul>
         </div>
       </nav>
