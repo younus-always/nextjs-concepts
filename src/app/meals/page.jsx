@@ -1,5 +1,6 @@
 import MealSearchInput from "../components/MealSearchInput"
 
+
 export const metadata = {
       title: "All Meals",
       description: "Trying to learn next.js as well as good",
